@@ -1,0 +1,25 @@
+server:
+  port: 8040
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          uri: lb://user-center
+          predicates:
+            - TimeBetween=上午9:00,下午10:00
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar
+            #这里PreLog是因为我们的过滤器工厂叫PreLogGatewayFilterFactory
+            - PreLog=a,b
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
