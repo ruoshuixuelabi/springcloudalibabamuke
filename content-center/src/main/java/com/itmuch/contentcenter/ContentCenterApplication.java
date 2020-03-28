@@ -12,8 +12,8 @@ import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
+
 /**
- *
  * @author admin
  */
 @MapperScan("com.itmuch.contentcenter.dao")

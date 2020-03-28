@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * 扩展ribbon的负载均衡器，让他支持nacos的权重
  * 我们可以实现IRule接口,自然也可以通过继承抽象类AbstractLoadBalancerRule来实现扩展
+ *
  * @author admin
  */
 @Slf4j
@@ -31,6 +32,7 @@ public class NacosWeightedRule extends AbstractLoadBalancerRule {
 
     /**
      * 实现扩展的时候主要是这个方法
+     *
      * @param key
      * @return
      */

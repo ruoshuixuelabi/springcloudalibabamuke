@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * 脱离ribbon的使用
+ *
  * @author admin
  */
 @FeignClient(name = "baidu", url = "http://www.baidu.com")

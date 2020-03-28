@@ -21,12 +21,12 @@ public class BonusController {
     public User addBonus(@RequestBody UserAddBonseDTO userAddBonseDTO) {
         Integer userId = userAddBonseDTO.getUserId();
         userService.addBonus(
-            UserAddBonusMsgDTO.builder()
-                .userId(userId)
-                .bonus(userAddBonseDTO.getBonus())
-                .description("兑换分享...")
-                .event("BUY")
-                .build()
+                UserAddBonusMsgDTO.builder()
+                        .userId(userId)
+                        .bonus(userAddBonseDTO.getBonus())
+                        .description("兑换分享...")
+                        .event("BUY")
+                        .build()
         );
         return this.userService.findById(userId);
     }

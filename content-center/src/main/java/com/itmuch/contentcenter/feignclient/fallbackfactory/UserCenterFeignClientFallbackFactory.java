@@ -22,6 +22,7 @@ public class UserCenterFeignClientFallbackFactory implements FallbackFactory<Use
                 userDTO.setWxNickname("流控/降级返回的用户");
                 return userDTO;
             }
+
             @Override
             public UserDTO query(UserDTO userDTO) {
                 return null;

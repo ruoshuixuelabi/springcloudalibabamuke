@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 自定义Ribbon的负载均衡
+ *
  * @author admin
  */
 @Configuration

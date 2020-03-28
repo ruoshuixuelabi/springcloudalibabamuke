@@ -228,6 +228,7 @@ public class TestController {
         source.output().send(MessageBuilder.withPayload("消息体").build());
         return "success";
     }
+
     @Autowired
     private MySource mySource;
 
@@ -239,6 +240,7 @@ public class TestController {
 
     @Value("${your.configuration}")
     private String yourConfiguration;
+
     @GetMapping("/yourConfiguration")
     public String testConfiguration() {
         return yourConfiguration;

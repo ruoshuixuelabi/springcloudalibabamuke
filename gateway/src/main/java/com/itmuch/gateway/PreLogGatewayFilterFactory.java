@@ -10,23 +10,22 @@ import org.springframework.web.server.ServerWebExchange;
 /**
  * 编写一个过滤器工厂
  * 一定要以GatewayFilterFactory结尾
+ *
  * @author admin
  */
 @Slf4j
 @Component
-public class PreLogGatewayFilterFactory
-    extends AbstractNameValueGatewayFilterFactory {
+public class PreLogGatewayFilterFactory extends AbstractNameValueGatewayFilterFactory {
     @Override
     public GatewayFilter apply(NameValueConfig config) {
         return ((exchange, chain) -> {
             log.info("请求进来了...{},{}", config.getName(), config.getValue());
             ServerHttpRequest modifiedRequest = exchange.getRequest()
-                .mutate()
-                .build();
+                    .mutate()
+                    .build();
             ServerWebExchange modifiedExchange = exchange.mutate()
-                .request(modifiedRequest)
-                .build();
-
+                    .request(modifiedRequest)
+                    .build();
             return chain.filter(modifiedExchange);
         });
     }

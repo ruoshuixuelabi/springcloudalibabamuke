@@ -1,11 +1,15 @@
 package com.itmuch.contentcenter.sentineltest;
+
 import com.alibaba.csp.sentinel.adapter.servlet.callback.UrlCleaner;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.stereotype.Component;
+
 import java.util.Arrays;
+
 /**
  * 扩展Sentinel-RESTful URL支持
+ *
  * @author admin
  */
 @Component

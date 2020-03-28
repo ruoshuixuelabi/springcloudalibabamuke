@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * 使用Feign调用远程的接口
+ *
  * @author admin
  */
 //@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
 //@FeignClient(name = "user-center",fallback = UserCenterFeignClientFallback.class)
-@FeignClient(name = "user-center",fallbackFactory = UserCenterFeignClientFallbackFactory.class)
+@FeignClient(name = "user-center", fallbackFactory = UserCenterFeignClientFallbackFactory.class)
 public interface UserCenterFeignClient {
     /**
      * http://user-center/users/{id}

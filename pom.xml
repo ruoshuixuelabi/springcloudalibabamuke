@@ -7,9 +7,75 @@
     <artifactId>springcloudalibaba</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <!--统一管理-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
+        <rocketmq-spring-boot-starter.version>2.1.0</rocketmq-spring-boot-starter.version>
+    </properties>
     <modules>
         <module>user-center</module>
+        <module>user-center3</module>
+        <module>user-center5</module>
+        <module>user-center9</module>
+        <module>user-center11</module>
         <module>content-center</module>
+        <module>content-center3</module>
+        <module>content-center4</module>
+        <module>content-center6</module>
+        <module>content-center7</module>
+        <module>content-center8</module>
+        <module>content-center9</module>
+        <module>content-center12</module>
         <module>gateway</module>
+        <module>spring-boot-demo</module>
     </modules>
+    <!-- 子模块继承之后，提供作用:锁定版本 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <!--语义化的版本控制-->
+                <!--2：主版本，第几代-->
+                <!--1：次版本，一些功能的增加，但是架构没有太大的变化，是兼容的-->
+                <!--5：增量版本，bug修复-->
+                <!--release：里程碑，SNAPSHOT：开发版 M：里程碑 RELEASE：正式版-->
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 整合Spring Cloud Alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 整合Spring Cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper-spring-boot-starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

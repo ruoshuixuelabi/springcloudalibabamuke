@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 @Slf4j
 public class LombokTest {
-//    public static final Logger LOGGER = LoggerFactory.getLogger(LombokTest.class);
+    //    public static final Logger LOGGER = LoggerFactory.getLogger(LombokTest.class);
     public static void main(String[] args) {
         UserRegisterDTO userRegisterDTO = new UserRegisterDTO();
         userRegisterDTO.setAgreement(true);
@@ -18,11 +18,11 @@ public class LombokTest {
         // ...
         // 建造者模式
         UserRegisterDTO build = UserRegisterDTO.builder()
-            .email("xx")
-            .password("x")
-            .confirmPassword("x")
-            .agreement(true)
-            .build();
+                .email("xx")
+                .password("x")
+                .confirmPassword("x")
+                .agreement(true)
+                .build();
 
         log.info("构造出来的UserRegisterDTO = {}", build);
     }

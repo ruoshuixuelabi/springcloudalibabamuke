@@ -7,13 +7,14 @@ import org.springframework.stereotype.Service;
 
 /**
  * 测试整合spring-cloud-starter-stream-rocketmq之后的接收消息功能
+ *
  * @author admin
  */
 @Service
 @Slf4j
 public class MyTestStreamConsumer {
     @StreamListener(MySink.MY_INPUT)
-    public  void  receive(String messgaeBody){
-        log.info("自定义接口通过stream接收到了消息:messageBody={}",messgaeBody);
+    public void receive(String messgaeBody) {
+        log.info("自定义接口通过stream接收到了消息:messageBody={}", messgaeBody);
     }
 }

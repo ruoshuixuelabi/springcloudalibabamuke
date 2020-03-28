@@ -12,10 +12,21 @@ spring:
             - AddRequestHeader=X-Request-Foo, Bar
             #这里PreLog是因为我们的过滤器工厂叫PreLogGatewayFilterFactory
             - PreLog=a,b
+      discovery:
+        locator:
+          #让gateway通过服务发现组件找到其他的微服务
+          enabled: true
+    nacos:
+      discovery:
+        server-addr: loclahost:8848
+  application:
+    #服务注册到nacos上的名称
+    name: gateway
 management:
   endpoints:
     web:
       exposure:
+        #注意这里的引号
         include: '*'
   endpoint:
     health:

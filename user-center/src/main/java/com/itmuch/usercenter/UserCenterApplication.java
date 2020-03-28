@@ -8,8 +8,8 @@ import org.springframework.cloud.stream.messaging.Sink;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * @MapperScan ：扫描mybatis哪些包里面的接口
  * @author admin
+ * @MapperScan ：扫描mybatis哪些包里面的接口
  */
 @MapperScan("com.itmuch.usercenter.dao")
 @SpringBootApplication
