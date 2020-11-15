@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.130:3306/content_center
+    hikari:
+      username: root
+      password: 123456
+      # >= 6.x: com.mysql.cj.jdbc.Driver
+      # <= 5.x: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        # 指定nacos 的server地址
+        server-addr: localhost:8848
+        #这里要配置id，需要在控制台先创建好
+        #        namespace: 0ad9c21a-5a06-4aa1-96d5-26500893eacf
+        #现在假设我是部署在南京机房的
+        cluster-name: NJ
+  application:
+    # 服务名称尽量用-不要用下划线或者特殊字符
+    name: content-center
+server:
+  port: 8010
+management:
+  endpoints:
+    web:
+      #暴露所有的监控端点
+      exposure:
+        include: '*'
+logging:
+  level:
+    com.itmuch.contentcenter.feignclient.UserCenterFeignClient: debug
+feign:
+  client:
+    config:
+      # 想要调用的微服务的名称
+      user-center:
+        loggerLevel: full #日志级别
+  httpclient:
+    #让Feign使用HttpClient做请求
+    enabled: true
+    #Feign的最大连接数
+    max-connections: 200
+    #Feign的单个连接的最大连接数
+    max-connections-per-route: 50
