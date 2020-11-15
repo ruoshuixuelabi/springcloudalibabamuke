@@ -12,11 +12,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-boot.version>2.3.6.RELEASE</spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
         <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
-        <rocketmq-spring-boot-starter.version>2.1.0</rocketmq-spring-boot-starter.version>
+        <rocketmq-spring-boot-starter.version>2.1.1</rocketmq-spring-boot-starter.version>
     </properties>
     <modules>
         <module>user-center</module>
